@@ -9,6 +9,7 @@ using Innoactive.Creator.Core.Configuration.Modes;
 using Innoactive.Creator.Core.EntityOwners;
 using Innoactive.Creator.Core.EntityOwners.FoldedEntityCollection;
 using Innoactive.Creator.Core.RestrictiveEnvironment;
+using Innoactive.Creator.Core.SceneObjects;
 using Innoactive.Creator.Core.Tabs;
 using Innoactive.Creator.Core.Utils.Logging;
 using Innoactive.Creator.Unity;
@@ -71,7 +72,8 @@ namespace Innoactive.Creator.Core
             {
                 Tabs = new TabsGroup(
                     new DynamicTab(new GUIContent("Behaviors"), () => Behaviors, value => Behaviors = (IBehaviorCollection)value),
-                    new DynamicTab(new GUIContent("Transitions"), () => Transitions, value => Transitions = (ITransitionCollection)value)
+                    new DynamicTab(new GUIContent("Transitions"), () => Transitions, value => Transitions = (ITransitionCollection)value),
+                    new DynamicTab(new GUIContent("Locked Objects"), () => new LockableObjectsCollection(this), value => { })
                 );
             }
         }

@@ -54,7 +54,7 @@ namespace Innoactive.Creator.Core.RestrictiveEnvironment
             }
         }
 
-        private static IEnumerable<LockablePropertyData> GetLockablePropertiesFrom(IStepData data)
+        public static IEnumerable<LockablePropertyData> GetLockablePropertiesFrom(IStepData data)
         {
             IEnumerable<LockablePropertyData> result = new List<LockablePropertyData>();
             foreach (ITransition transition in data.Transitions.Data.Transitions)
