@@ -40,6 +40,7 @@ namespace Innoactive.Creator.Tests.Utils
             }
 
             CoroutineDispatcher.Instance.StopAllCoroutines();
+            UnitTestChecker.IsUnitTesting = false;
         }
     }
 }
