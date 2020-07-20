@@ -8,17 +8,25 @@ A snap zone is a pre-defined area defined by a trigger collider where the traine
 
 Snap zones, by default, are not visible to the trainee. However, they are visible for the training designer in the editor window as a volume. 
 
-In order to provide a visual feedback to the trainee when the trainee hovers a snap zone with an interactable object, the snap zone can be configured as follows:
+[![Snap Zone Configuration](../images/snap-zones/snapzone.png "Snap Zone Configuration")](../images/snapzones/snapzone.png)
 
-- **Show Interactable Hover Meshes**: If this option is enabled the snap zone will show a preview version of the snappable object.
-- **Interactable Hover Mesh Material**: The material that the preview object will have when a valid snappable object interacts with the snap zone.
+#### Snap Zone Preview
 
-It is also possible to configure the snap zone to show a preview version (playmode only) of the desired object to be snap in them as follows:
+It is also possible to configure the snap zone to show a preview version (playmode only) of the desired snap object as follows:
 
 - **Show Highlight Object**: A prefab that contains only the meshes of the preview object.
-- **Shown Highlight Object Color**: The color that the preview object will have. 
+- **Shown Highlight Object Color**: The color that the preview object will have.
 
-[![Snap Zone Configuration](../images/snap-zones/snapzone.png "Snap Zone Configuration")](../images/snapzones/snapzone.png)
+[![Snap Zone Preview](../images/snap-zones/snap-zone-preview.png "Snap Zone Preview")](../images/snapzones/snap-zone-preview.png)
+
+#### Snap Zone Validation Preview
+
+To provide visual feedback to the trainee when hovering an object near the snap zone, it can be configured as follows:
+
+- **Show Interactable Hover Meshes**: If this option is enabled, the snap zone will show a preview version of the snappable object.
+- **Interactable Hover Mesh Material**: The material that the preview object will have when a valid snappable object interacts with the snap zone.
+
+[![Snap Zone Validation Preview](../images/snap-zones/snap-zone-validation-preview.png "Snap Zone Validation Preview")](../images/snapzones/snap-zone-validation-preview.png)
 
 You can create a snap zone either [automatically](#a-automatically-setup-a-simple-snap-zone) (recommended) or [manually](#b-manually-setup-a-simple-snap-zone).
 
@@ -44,7 +52,7 @@ To automatically create a matching snap zone, click the `Create Snap Zone` butto
 
 ### III. Adjust snap zone (optional)
 
-You can either change the settings directly in the new snap zone object or change the default settings in the `Snap Zone Settings` window. In order to open the default snap zone settings, go to the Unity's toolbar and select: `Innoactive` > `Creator` > `Windows` > `Snap Zone Settings`. All changes are saved automatically, and every snap zone that will be created via the `Create Snap Zone` button afterwards will get the new settings by default. The `Apply settings in current scene` button applies these settings to all snap zones in the current scene even if they were not created automatically.
+You can either change the settings directly in the new snap zone object or change the default settings in the `Snap Zone Settings` window. In order to open the default snap zone settings, **go to the Unity's toolbar** and select: `Innoactive` > `Creator` > `Windows` > `Snap Zone Settings`. All changes are saved automatically, and every snap zone that will be created via the `Create Snap Zone` button afterwards will get the new settings by default. The `Apply settings in current scene` button applies these settings to all snap zones in the current scene even if they were not created automatically.
 
 [![Create Snap Zone](../images/snap-zones/change-settings.gif "Create Snap Zone")](../images/snapzones/change-settings.gif)
 
@@ -57,9 +65,9 @@ In order to properly set up a snap zone we require 3 game objects:
 
 - [**Snap Zone**](#snap-zone): The object that will act as snap zone.
 - [**Snappable Object**](#snappable-object): The object that we want to be snapped into the snap zone.
-- [**Preview**](#preview): The object that will be shown as preview object on the snap zone (Optional).
+- [**Preview**](#preview): The object that will be shown as preview object on the snap zone (optional).
 
-> By default, a snap zone can interact with any interactable object, to change this behavior (for example, making a snap zone to only accept one type of object), the `Interaction Layer Mask` must be changed in both, the snap zone and interactable object. 
+> By default, a snap zone can interact with any interactable object, to change this behavior (for example, making a snap zone to only accept one type of object), the [`Interaction Layer Mask`](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@0.9/api/UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor.html#UnityEngine_XR_Interaction_Toolkit_XRBaseInteractor_InteractionLayerMask) must be changed in both, the snap zone and interactable object. 
 
 ### Snap zone
 
