@@ -30,8 +30,8 @@ namespace Innoactive.CreatorEditor.Analytics
             }
 
             window.Show();
-            window.minSize = new Vector2(280f, 30f);
-            window.maxSize = new Vector2(280f, 30f);
+            window.minSize = new Vector2(280f, 50f);
+            window.maxSize = new Vector2(280f, 50f);
             window.Focus();
         }
 
@@ -51,6 +51,25 @@ namespace Innoactive.CreatorEditor.Analytics
             {
                 AnalyticsUtils.SetTrackingTo((AnalyticsState)Enum.ToObject(typeof(AnalyticsState), newState + 1));
             }
+
+            GUIStyle hyperlink = new GUIStyle();
+            hyperlink.normal.textColor = new Color(0.122f, 0.435f, 0.949f);
+
+            GUILayout.BeginArea(new Rect(3, 30, 280, 50));
+
+            if (GUILayout.Button("Data Privacy Information", hyperlink, GUILayout.ExpandWidth(false)))
+            {
+                Application.OpenURL("http://developers.innoactive.de/documentation/creator/latest/articles/innoactive-creator/data-privacy-information.html");
+            }
+
+            GUILayout.EndArea();
+
+            // Unity Editor UI has no way to underline text, so this is a fun workaround.
+            GUILayout.BeginArea(new Rect(3, 31, 280, 50));
+
+            GUILayout.Label("____________________________", hyperlink);
+
+            GUILayout.EndArea();
         }
     }
 }
